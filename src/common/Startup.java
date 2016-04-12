@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class Startup {
 
@@ -41,7 +42,15 @@ public class Startup {
         for(String key : keys2) {
             Employee found = treeMap.get(key);
             System.out.println(found.toString());
+        
+        Set<Employee> employeesSet = new TreeSet<>();
+        employeesSet.add(e1);
+        employeesSet.add(e2);
+        employeesSet.add(e3);
+        employeesSet.add(e4);
+        
         }
+        
 //        Address a1 = new Address("1234 Street", "Milwaukee", "222-222-2222");
 //        Address a2 = new Address("0234 Street", "Milwaukee", "222-222-2222");
 //        Address a3 = new Address("9234 Street", "Milwaukee", "222-222-2222");
