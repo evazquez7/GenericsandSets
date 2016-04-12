@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class Startup {
 
@@ -18,21 +19,28 @@ public class Startup {
         
         
         Map<String,Employee> employees = new HashMap<>();
-        employees.put("111-11-1111", e1);
-        employees.put("222-22-2222", e2);
-        employees.put("333-33-3333", e3);
-        employees.put("111-11-1111", e4);
+        employees.put(e1.getSsn(), e1);
+        employees.put(e2.getSsn(), e2);
+        employees.put(e3.getSsn(), e3);
+        employees.put(e4.getSsn(), e4);
         //get values loop
-        Collection<Employee> values = employees.values();
-        for(Employee e : values) {
-            System.out.println(e);
-        }
-        //Get keys loop
-        Set<String> keys = employees.keySet();
+//        Collection<Employee> values = employees.values();
+//        for(Employee e : values) {
+//            System.out.println(e);
+//        }
+//        //Get keys loop
+//        Set<String> keys = employees.keySet();
+////        
+//        for (String key : keys) {
+//            Employee e = employees.get(key);
+//            System.out.println(e);
+//        }
 //        
-        for (String key : keys) {
-            Employee e = employees.get(key);
-            System.out.println(e);
+        Map<String, Employee> treeMap = new TreeMap<String, Employee>(employees);
+        Set<String> keys2 = treeMap.keySet();
+        for(String key : keys2) {
+            Employee found = treeMap.get(key);
+            System.out.println(found.toString());
         }
 //        Address a1 = new Address("1234 Street", "Milwaukee", "222-222-2222");
 //        Address a2 = new Address("0234 Street", "Milwaukee", "222-222-2222");
